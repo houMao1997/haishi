@@ -1,6 +1,12 @@
 // src\pages\login\index.js
 import React from "react";
-import { Form, Input, Button, Modal,Icon,message } from "antd";
+import { 
+  Form,
+  Input,
+  Button, 
+  Modal,
+  Icon,
+  message } from "antd";
 import Footer from "../../components/Footer";
 import "./index.less";
 import { connect } from "react-redux"; // 连接器
