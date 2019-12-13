@@ -56,7 +56,7 @@ class DropdownDemo extends React.Component {
     }
   componentDidMount() {
     const url = global.constants.url
-    let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+    let userid = JSON.parse(localStorage.getItem('userinfo'));
     $.ajax({
       url: `${url}` + '/index/Login/userThreeDAchievementlst',
       type: 'get',

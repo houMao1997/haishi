@@ -69,7 +69,7 @@ const {  RangePicker } = DatePicker;
     componentDidMount(){
         const {sjmc,zf,baoguang,chartdata}=this.state
         const url = global.constants.url
-        let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+        let userid = JSON.parse(localStorage.getItem('userinfo'));
         $.ajax({
           url: `${url}` + '/index/addpaper/kaoshijilu',
           type: 'get',

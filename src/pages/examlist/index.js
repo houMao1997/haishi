@@ -61,7 +61,7 @@ class DropdownDemo extends React.Component {
     }
   componentDidMount() {
     const url = global.constants.url
-    let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+    let userid = JSON.parse(localStorage.getItem('userinfo'));
     // let userid = localStorage.getItem('id')
     $.ajax({
       url: `${url}` + '/index/addpaper/kaoshijilu',
@@ -284,7 +284,7 @@ for(let j =0;j<arr1.length;j++ ){
                 })
               message.success(data.info)
               const url = global.constants.url
-              let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+              let userid = JSON.parse(localStorage.getItem('userinfo'));
               $.ajax({
                 url: `${url}` + '/index/addpaper/kaoshijilu',
                 type: 'get',
@@ -350,7 +350,7 @@ for(let j =0;j<arr1.length;j++ ){
                 })
               message.success(data.info)
               const url = global.constants.url
-              let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+              let userid = JSON.parse(localStorage.getItem('userinfo'));
               $.ajax({
                 url: `${url}` + '/index/addpaper/kaoshijilu',
                 type: 'get',
