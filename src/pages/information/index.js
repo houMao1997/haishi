@@ -11,7 +11,7 @@ class Change extends Component {
 
 
 handleSubmit = e => {
-  let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+  let userid = JSON.parse(localStorage.getItem('userinfo'));
   e.preventDefault();
   this.props.form.validateFields((err, values) => {
     if (!err) {

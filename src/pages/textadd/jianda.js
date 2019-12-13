@@ -20,7 +20,7 @@ class CarouselDemo extends React.Component {
       const counlist = Object.values(values) 
       const wenti = values.wenti;
       const daan = values.daan ;
-    //  const daan1 = daan[5];
+      //const daan1 = daan[5];
       const count =counlist.slice(1,5); 
       if (!err) {
         const url =global.constants.url
@@ -62,10 +62,7 @@ class CarouselDemo extends React.Component {
         sm: { span: 8 },
       },
     };
-    // const formItemLayout = {
-    //   labelCol: { span:1 },
-    //   wrapperCol: { span: 15 },
-    // };
+
     return (
       <div >
      <Card>

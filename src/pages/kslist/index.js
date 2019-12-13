@@ -29,7 +29,7 @@ class DropdownDemo extends React.Component {
   }
   componentDidMount() {
     const url = global.constants.url
-    let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+    let userid = JSON.parse(localStorage.getItem('userinfo'));
     let userdata = this.props.location.state||localStorage.getItem('baoguang');
     $.ajax({
       url: `${url}` + '/index/addpaper/xueshengkaoshijilu',
@@ -55,7 +55,6 @@ class DropdownDemo extends React.Component {
         state: { ksid: id }
       });
     }
- 
   }
   render() {
     const { getFieldError, isFieldTouched } = this.props.form;

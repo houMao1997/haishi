@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button,  Card, Radio, message,Form,Input,Checkbox} from 'antd'
+import {Button,  Card, Radio, message,Form,Input,Checkbox,Result} from 'antd'
 import $ from 'jquery'
 import '../../../src/config/global'
 
@@ -9,7 +9,7 @@ const { TextArea } = Input;
 class ButtonDemo extends React.Component {
   constructor(props) {
     super(props)
-    let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+    let userid = JSON.parse(localStorage.getItem('userinfo'));
     this.state = {
       size: 'default',
 
@@ -30,7 +30,8 @@ class ButtonDemo extends React.Component {
       p_id:'',
       value:'',
       dxva:[],
-      height:  window.document.body.clientHeight
+      height:  window.document.body.clientHeight,
+      code:1
     }
   }
 
@@ -42,6 +43,9 @@ class ButtonDemo extends React.Component {
       show:0
     });
 
+  }
+  back=()=>{
+    this.props.history.push("./sj");
   }
   handleOk = e => {
 
@@ -61,7 +65,7 @@ class ButtonDemo extends React.Component {
 
   }
   componentDidMount(){
-    let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+    let userid = JSON.parse(localStorage.getItem('userinfo'));
     const url2 =global.constants.url
     this.setState({
       url2:url2
@@ -73,8 +77,14 @@ class ButtonDemo extends React.Component {
       type:'get',
       success:(data)=>{
         if(data.code ==0){
+          this.setState({
+            code:0
+          })
           message.error("本场考试你已经考过不可以重复考试")
         }else{
+          this.setState({
+            code:1
+          })
           const panduan = data.info.panduan
           const lilundan = data.info .lilundan
           const lilunduo = data.info.lilunduo
@@ -99,7 +109,7 @@ class ButtonDemo extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+    let userid = JSON.parse(localStorage.getItem('userinfo'));
     const {p_id} = this.state
     this.props.form.validateFields((err, values) => {
       if (!err) {
@@ -570,7 +580,7 @@ class ButtonDemo extends React.Component {
   render() {
 
     let { getFieldDecorator } = this.props.form;
-    const {jiandaArr,kantujiandaArr,kantuArr,lilunduoArr,lilundanArr, panduanArr
+    const {jiandaArr,kantujiandaArr,kantuArr,lilunduoArr,lilundanArr, panduanArr,code
     }=this.state
     const radioStyle = {
       display: 'block',
@@ -594,8 +604,19 @@ class ButtonDemo extends React.Component {
           {/* <Card>
         <h1 style={{textAlign:'center',fontSize:'20px',}}>2016年第一次考试</h1>
       </Card> */}
-
-
+          {this.state.code == 0 ? 
+           <Card>
+              <Result
+                status="warning"
+                title="你已经考过试了，请联系管理员重新考试"
+                extra={
+                  <Button onClick={this.back} type="primary" key="console">
+                    返回
+                  </Button>
+                }
+            />
+           </Card>
+          :
           <Form layout="inline" onSubmit={this.handleSubmit}>
             {this.state.panduanArr.length == 0? "" :<h1 style={styles.title}>判断题</h1> }
             {panduanHtml}
@@ -627,6 +648,9 @@ class ButtonDemo extends React.Component {
             </Form.Item>
           </Form>
 
+        }
+
+          
 
 
         </div>

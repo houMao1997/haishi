@@ -9,7 +9,6 @@ class componentName extends Component {
     }
 
     componentDidMount(){
-      
         // const a ={"panduannum":10,"panduanfenshu":"10","lilundannum":5,"lilundanfenshu":"10","lilunduonum":10,"lilunduofenshu":"20","kantunum":10,"kantufenshu":"50"}
         const url =global.constants.url
         $.ajax({

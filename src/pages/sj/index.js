@@ -8,7 +8,7 @@ const { TextArea } = Input;
 class ButtonDemo extends React.Component {
   constructor(props) {
     super(props)
-    let userid = JSON.parse(localStorage.getItem('userinfo')).id;
+    let userid = JSON.parse(localStorage.getItem('userinfo'));
     this.state = {
       size: 'default',
 

@@ -180,6 +180,7 @@ class Login extends React.Component {
                 if(data.code == 1 ){
                   window.location.href = "/#/information";
                   localStorage.setItem("identity",data.info.userinfo.identity)
+                  localStorage.setItem("userinfo",data.info.userinfo.id)
                   var formValue = _this.props.form.getFieldsValue();
                   // _this.props.loginSubmit({
                   //   username: formValue.username,
@@ -235,8 +236,10 @@ class Login extends React.Component {
               success:(data)=>{
                  
                 if(data.code == 1 ){
+
                   window.location.href = "/#/information";
                   localStorage.setItem("identity",data.info.userinfo.identity)
+                  localStorage.setItem("userinfo",data.info.userinfo.id)
                   var formValue = _this.props.form.getFieldsValue();
                   // _this.props.loginSubmit({
                   //   username: formValue.username,
