@@ -41,14 +41,6 @@ export default class IRouter extends React.Component {
                   <Switch>
                     <Route path="/home" component={Home}/>
                     <Route path="/ui/buttons" component={Buttons}/>
-                   
-
-
-
-
-
-
-
                     <Route path="/add" component={Add}/>
                     <Route path="/textadd/more" component={More}/>
                     <Route path="/textadd/single" component={Single}/>

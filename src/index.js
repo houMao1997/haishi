@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import Life from "./pages/demo/Life";
 import Admin from "./admin";
 import Router from "./router"; //全局引入Router文件
 import { Provider } from "react-redux"; // 添加<Provider />项目根组件
