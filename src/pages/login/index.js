@@ -302,7 +302,7 @@ class Login extends React.Component {
       <div className="login-page">
         <div className="login-header">
           <div className="logo">
-            <img src="/assets/soeasy.png" alt=" 工业X射线探伤模拟教学考试系统" />
+            <img src="/assets/logo.ico" alt=" 工业X射线探伤模拟教学考试系统" />
            工业X射线探伤模拟教学考试系统
           </div>
         </div>
@@ -318,10 +318,6 @@ class Login extends React.Component {
                   {this.state.errorMsg}
                 </div>
               </div>
-             
-
-
-
           <div className="student">
           <div className="title">学生登陆</div>
         <Form className="login-form">
@@ -367,11 +363,6 @@ class Login extends React.Component {
       </Form>
       <a onClick={this.toadmin} style={{right:"30px",position:"absolute"}}>管理员登陆</a>
       </div>
-
-
-
-
-
       <div className="admin" style={{display:"none"}}>
           <div className="title">管理员登陆</div>
         <Form className="login-form">
@@ -395,7 +386,6 @@ class Login extends React.Component {
         </FormItem>
         <FormItem>
           {getFieldDecorator('yzm', {
-           
                })(
                   <Input
                     style={{width:"65%"}}
@@ -404,49 +394,19 @@ class Login extends React.Component {
                )}
              <canvas id="canvas1" style={{marginLeft:'10px',position:'absolute',border:"1px solid #99CCFF",background:"#fff",width:'100px',height:'30px',marginTop:"5px"}} onClick={this.change1}></canvas>
              </FormItem>
-        <FormItem style={{marginTop:"-10px"}}>
-          <Button
-            type="primary"
-            onClick={this.loginSubmit1}
-            className="login-form-button"
-            
-          >
+            <FormItem style={{marginTop:"-10px"}}>
+              <Button
+                type="primary"
+                onClick={this.loginSubmit1}
+                className="login-form-button" 
+              >
             登录
           </Button>
         </FormItem>
       </Form>
       <a onClick={this.tostudent} style={{right:"30px",position:"absolute"}}>学生登陆</a>
       </div>
-
-
-
-
-
-
-
-
-
-
               </div>
-
-
-
-
-
-
-              
-
-
-
-
-
-
-
-
-
-
-            
-            
           </div>
         </div>
         <Footer />

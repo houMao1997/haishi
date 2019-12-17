@@ -104,7 +104,7 @@ class NavLeft extends React.Component {
       <div>
        
           <div className="logo">
-            <img src="/assets/soeasy.png" alt=""/>
+            <img src="/assets/logo.ico" alt=""/>
             <h1>考试系统</h1>
           </div>
 
