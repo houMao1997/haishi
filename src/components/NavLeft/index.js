@@ -73,14 +73,24 @@ class NavLeft extends React.Component {
       //如果item有子元素,遍历自己,再次调用,直到子节点加载完毕
       if (item.children) {
         return (
-          <SubMenu title={item.title} key={item.key} Icon={item.icon}>
+          <SubMenu  
+          title={
+            <span>
+              <Icon type={item.icon} />
+              <span> {item.title}</span>
+          </span>
+            
+          } 
+          
+          
+          key={item.key} >
             {this.renderMenu(item.children)}
           </SubMenu>
         );
       }
       return (
         <Menu.Item title={item.title} key={item.key}>
-          <NavLink to={item.key}>{item.title}</NavLink>
+          <NavLink to={item.key}> <Icon type={item.icon} />{item.title}</NavLink>
         </Menu.Item>
       );
     });

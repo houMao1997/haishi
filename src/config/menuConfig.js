@@ -7,43 +7,52 @@ const menuList = [
     {
         title: '信息修改',
         key: '/information',
+        icon:"mail",
     },
     {
         title: '用户列表',
         key: '/ui/buttons',
-        icon:'add'
+        icon:"mail",
     },
     {
         title: '新增账号',
         key: '/add',
+        icon:"mail",
     },
     {
         title: '新增试题',
         key: '/textadd',
+        icon:"mail",
         children: [
             {
                 title: '理论多选',
                 key: '/textadd/more',
+                icon:"mail",
             },
             {
                 title: '理论单选',
                 key: '/textadd/single',
+                icon:"mail",
             },
             {
                 title: '看图选择',
                 key: '/textadd/seepi',
+                icon:"mail",
             },
             {
                 title: '判断题',
                 key: '/textadd/judge',
+                icon:"mail",
             },
             {
                 title: '简答题',
                 key: '/textadd/jianda',
+                icon:"mail",
             },
             {
                 title: '自选题',
                 key: '/textadd/personal',
+                icon:"mail",
             },
           
         ]
@@ -51,19 +60,23 @@ const menuList = [
     {
         title: '抽题规则',
         key: '/rules',
+        icon:"mail",
     },
 
     {
         title: '试题列表',
         key: '/examlist',
+        icon:"mail",
     },
     {
         title: '模拟操作',
         key: '/mncz',
+        icon:"mail",
     },
     {
         title: '成绩分析',
         key: '/analysis',
+        icon:"mail",
     },
     // {
     //     title: '表单',
