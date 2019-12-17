@@ -315,51 +315,49 @@ for(let j =0;j<arr1.length;j++ ){
 
   handleSubmit4 = (e) => {
     const {recid,jiandaArr}=this.state
-  
     this.props.form.validateFields((err, values) => {
       let arr=[];
       for (let i in values) {
         arr.push(values[i]); //属性
         //arr.push(obj[i]); //值
     }
-    let arr1=[];
-    for (let i in jiandaArr) {
+      let arr1=[];
+      for (let i in jiandaArr) {
       arr1.push(jiandaArr[i].id); //属性
       //arr.push(obj[i]); //值
-  }
-const arrfenshu=[]
-arr =  arr.slice(1)
-for(let j =0;j<arr1.length;j++ ){
-  arrfenshu.push({id: arr1[j],fenshu: arr[j]});
-}
-      const url2 = global.constants.url 
-      if (!err) {
-        $.ajax({
-          url:`${url2}`+'/index/addpaper/xiugaifenshu',
-          data:{arrfenshu:arrfenshu},
-          type:'post',
-          dataType:'json',
-          success: (data)=>{
-            if(data.code ==0){
-              message.error(data.info)
-            }
-            if(data.code ==1){
+    }
+    const arrfenshu=[]
+    arr =  arr.slice(1)
+    for(let j =0;j<arr1.length;j++ ){
+      arrfenshu.push({id: arr1[j],fenshu: arr[j]});
+    }
+    const url2 = global.constants.url 
+    if (!err) {
+      $.ajax({
+        url:`${url2}`+'/index/addpaper/xiugaifenshu',
+        data:{arrfenshu:arrfenshu},
+        type:'post',
+        dataType:'json',
+        success: (data)=>{
+        if(data.code ==0){
+          message.error(data.info)
+        }
+        if(data.code ==1){
+          this.setState({
+            visible2:false
+          })
+          message.success(data.info)
+          const url = global.constants.url
+          let userid = JSON.parse(localStorage.getItem('userinfo'));
+          $.ajax({
+            url: `${url}` + '/index/addpaper/kaoshijilu',
+            type: 'get',
+            dataType: 'json',
+            success: (data) => {
               this.setState({
-                visible2:false
-                })
-              message.success(data.info)
-              const url = global.constants.url
-              let userid = JSON.parse(localStorage.getItem('userinfo'));
-              $.ajax({
-                url: `${url}` + '/index/addpaper/kaoshijilu',
-                type: 'get',
-                dataType: 'json',
-                success: (data) => {
-                
-                  this.setState({
-                      data:data.info
-                      })
-                }
+                data:data.info
+              })
+            }
               })
             }
            this.setState({
@@ -403,7 +401,6 @@ for(let j =0;j<arr1.length;j++ ){
            </div>
              )}
            </Form.Item>
-          
         </Form>
         </Card>
         
