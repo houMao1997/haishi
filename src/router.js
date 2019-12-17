@@ -33,7 +33,6 @@ export default class IRouter extends React.Component {
         <App>
           <Switch>
             <Route path="/login" component={Login}/>
-          
             <Route
               path="/"
               render={() => (
@@ -59,7 +58,7 @@ export default class IRouter extends React.Component {
                     <Route path="/analysis" component={Analysis}/>
                     <Route path="/sj" component={Sj}/>
                     <Route path="/kslist" component={Kslist}/>
-                    <Redirect to="/home"/>
+                    <Redirect to="/login"/>
                     {/*<Route component={NoMatch}/>*/}
                   </Switch>
                 </Admin>
