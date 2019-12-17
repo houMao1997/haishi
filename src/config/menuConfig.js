@@ -12,47 +12,47 @@ const menuList = [
     {
         title: '用户列表',
         key: '/ui/buttons',
-        icon:"mail",
+        icon:"ordered-list",
     },
     {
         title: '新增账号',
         key: '/add',
-        icon:"mail",
+        icon:"plus-circle",
     },
     {
         title: '新增试题',
         key: '/textadd',
-        icon:"mail",
+        icon:"plus-square",
         children: [
             {
                 title: '理论多选',
                 key: '/textadd/more',
-                icon:"mail",
+                icon:"pause",
             },
             {
                 title: '理论单选',
                 key: '/textadd/single',
-                icon:"mail",
+                icon:"info",
             },
             {
                 title: '看图选择',
                 key: '/textadd/seepi',
-                icon:"mail",
+                icon:"area-chart",
             },
             {
                 title: '判断题',
                 key: '/textadd/judge',
-                icon:"mail",
+                icon:"check-circle",
             },
             {
                 title: '简答题',
                 key: '/textadd/jianda',
-                icon:"mail",
+                icon:"snippets",
             },
             {
                 title: '自选题',
                 key: '/textadd/personal',
-                icon:"mail",
+                icon:"menu-fold",
             },
           
         ]
@@ -60,23 +60,23 @@ const menuList = [
     {
         title: '抽题规则',
         key: '/rules',
-        icon:"mail",
+        icon:"column-width",
     },
 
     {
         title: '试题列表',
         key: '/examlist',
-        icon:"mail",
+        icon:"unordered-list",
     },
     {
         title: '模拟操作',
         key: '/mncz',
-        icon:"mail",
+        icon:"bar-chart",
     },
     {
         title: '成绩分析',
         key: '/analysis',
-        icon:"mail",
+        icon:"line-chart",
     },
     // {
     //     title: '表单',
