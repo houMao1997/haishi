@@ -2,6 +2,7 @@ import React from 'react'
 import { Table, Button, Form, Card, message } from 'antd'
 import $ from 'jquery'
 import '../../../src/config/global'
+import request from "../../../src/fetch"
 @Form.create()
 class DropdownDemo extends React.Component {
     constructor() {
@@ -11,7 +12,8 @@ class DropdownDemo extends React.Component {
             totaWl: 20,
             pageSize: 10,
             visible: false,
-            text: ''
+            text: '',
+            data:[]
         };
     }
     set = (text) => {
@@ -40,19 +42,21 @@ class DropdownDemo extends React.Component {
         });
     }
     componentWillMount() { }
-    componentDidMount() {
-        const url = global.constants.url
-        $.ajax({
-            url: `${url}` + '/index/login/accountList',
-            type: 'post',
-            dataType: 'JSON',
-            success: (data) => {
-                this.setState({
-                    data: data.info
-                })
-            }
+    componentDidMount=()=> {
+        request({
+            url:'/index/login/accountList',
+            method:'post',
+            data:{"Header":{"AccessToken":"eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFM1MTIifQ.eyJzdWIiOiIxMDYiLCJleHBpciI6MTUxMDczODAzNjA5MiwiaXNzIjoiIn0.eo000vRNb_zQOibg_ndhlWbi27hPt3KaDwVk7lQiS5NJ4GS4esaaXxfoCbRc7-hjlyQ8tY_NZ24BTVLwUEoXlA"},
+                "Body":{}}
+        }).then((res)=>{
+            console.log(res)
+            this.setState({
+                data: res.info
+            })
         })
     }
+
+
     render() {
         const {
             getFieldDecorator,
